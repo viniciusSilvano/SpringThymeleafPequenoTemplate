@@ -3,12 +3,20 @@
  */
 package com.test.models;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import com.test.util.PizzasEnum;
 
 /**
  * @author vinicius silvano
  *
  */
+@Scope(scopeName = ConfigurableBeanFactory.SCOPE_SINGLETON)
+@Component("PizzaFactory")
+@Primary
 public class PizzaFactory implements BasePizzaFactory {
 
 	@Override
@@ -24,6 +32,7 @@ public class PizzaFactory implements BasePizzaFactory {
 			break;
 		case VEGGIE:
 			pizza = new VeggiePizza();
+			break;
 		default:
 			throw new IllegalArgumentException("Invalid Pizza Type");
 			
