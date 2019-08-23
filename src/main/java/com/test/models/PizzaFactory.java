@@ -3,6 +3,8 @@
  */
 package com.test.models;
 
+import java.util.List;
+
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
@@ -20,18 +22,18 @@ import com.test.util.PizzasEnum;
 public class PizzaFactory implements BasePizzaFactory {
 
 	@Override
-	public Pizza createPizza(PizzasEnum type) throws IllegalArgumentException {
+	public Pizza createPizza(PizzasEnum type,List<Ingridient> ingridients) throws IllegalArgumentException {
 		// TODO Auto-generated method stub
 		Pizza pizza;
 		switch(type) {
 		case CHESSE:
-			pizza = new ChessePizza();
+			pizza = new ChessePizza(ingridients);
 			break;
 		case PEPPERONI:
-			pizza =  new PepperoniPizza();
+			pizza =  new PepperoniPizza(ingridients);
 			break;
 		case VEGGIE:
-			pizza = new VeggiePizza();
+			pizza = new VeggiePizza(ingridients);
 			break;
 		default:
 			throw new IllegalArgumentException("Invalid Pizza Type");
