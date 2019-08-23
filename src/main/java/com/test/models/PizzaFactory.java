@@ -27,13 +27,13 @@ public class PizzaFactory implements BasePizzaFactory {
 		Pizza pizza;
 		switch(type) {
 		case CHESSE:
-			pizza = new ChessePizza(ingridients);
+			pizza = new ChessePizza(ingridients, type);
 			break;
 		case PEPPERONI:
-			pizza =  new PepperoniPizza(ingridients);
+			pizza =  new PepperoniPizza(ingridients, type);
 			break;
 		case VEGGIE:
-			pizza = new VeggiePizza(ingridients);
+			pizza = new VeggiePizza(ingridients, type);
 			break;
 		default:
 			throw new IllegalArgumentException("Invalid Pizza Type");

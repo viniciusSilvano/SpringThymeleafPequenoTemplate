@@ -11,11 +11,10 @@ public abstract class Pizza {
 	
 	public abstract void addIngredients();
 	
-	
-	
-	public Pizza(List<Ingridient> ingridients) {
+	public Pizza(List<Ingridient> ingridients, PizzasEnum name) {
 		super();
 		this.ingridients = ingridients;
+		this.name = name.getPizzaName();
 	}
 
 	public  void bakePizza() {
@@ -37,6 +36,10 @@ public abstract class Pizza {
 	public void setName(PizzasEnum name) {
 		this.name = name.getPizzaName();
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Pizza [name=" + name + "]";
+	}
 	
 }

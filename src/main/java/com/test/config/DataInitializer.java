@@ -11,6 +11,7 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import com.test.DTO.PizzaDTO;
 import com.test.models.BasePizzaFactory;
 import com.test.models.Ingridient;
 import com.test.models.Pizza;
@@ -82,8 +83,8 @@ public class DataInitializer{
 		System.out.println();
 	}
 
-	public static List<Pizza> getPizzas() {
-		return PIZZAS;
+	public static List<PizzaDTO> getPizzas() {
+		return PizzaDTO.ConvertCollectionToDTOList(PIZZAS);
 	}
 	
 	public static Set<Ingridient> getIngridients(){

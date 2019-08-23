@@ -2,11 +2,13 @@ package com.test.models;
 
 import java.util.List;
 
+import com.test.util.PizzasEnum;
+
 public class ChessePizza extends Pizza {
 	
 
-	public ChessePizza(List<Ingridient> ingridients) {
-		super(ingridients);
+	public ChessePizza(List<Ingridient> ingridients, PizzasEnum name) {
+		super(ingridients, name);
 	}
 	
 	
