@@ -41,5 +41,12 @@ public class Ingridient {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Ingridient [name=" + name + "]";
+	}
+	
+	
 		
 }

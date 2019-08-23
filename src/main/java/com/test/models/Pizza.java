@@ -2,8 +2,11 @@ package com.test.models;
 
 import java.util.List;
 
+import com.test.util.PizzasEnum;
+
 public abstract class Pizza {
 	
+	private String name;
 	private List<Ingridient> ingridients;
 	
 	public abstract void addIngredients();
@@ -26,8 +29,14 @@ public abstract class Pizza {
 	public void setIngridients(List<Ingridient> ingridients) {
 		this.ingridients = ingridients;
 	}
-    
-    public void setNewIngridient(String ingridient) {
-    	
-    }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(PizzasEnum name) {
+		this.name = name.getPizzaName();
+	}
+	
+	
 }
